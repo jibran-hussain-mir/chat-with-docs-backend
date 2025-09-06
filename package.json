@@ -1,0 +1,34 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "AI chatbot that gives users a superpower to chat with their documents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jibran-hussain-mir/chat-with-docs.git"
+  },
+  "author": "mirjibranhussain@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jibran-hussain-mir/chat-with-docs/issues"
+  },
+  "homepage": "https://github.com/jibran-hussain-mir/chat-with-docs#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.56.0",
+    "aws-sdk": "^2.1692.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "type": "module"
+}
