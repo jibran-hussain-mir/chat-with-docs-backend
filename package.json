@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jibran-hussain-mir/chat-with-docs#readme",
   "dependencies": {
+    "@langchain/openai": "^0.6.11",
     "@supabase/supabase-js": "^2.56.0",
     "aws-sdk": "^2.1692.0",
     "dotenv": "^17.2.1",
