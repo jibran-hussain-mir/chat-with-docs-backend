@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid'
 import helper from '../../../utils/helper.js';
 
 async function answerUsersQuestion(req, res) {
@@ -18,10 +19,20 @@ async function answerUsersQuestion(req, res) {
         
         console.log('Error in answerUsersQuestion method', error);
     }
-} 
+}
+
+async function createChatId(req, res) {
+    try {
+        const chatId = nanoid();
+        return res.status(201).json({ chatId: chatId });
+    } catch(error) {
+        console.log('Error in createChatId method', error);
+    }
+}
 
 const chatService = {
-    answerUsersQuestion: answerUsersQuestion
+    answerUsersQuestion: answerUsersQuestion,
+    createChatId: createChatId
 }
 
 export default chatService;
