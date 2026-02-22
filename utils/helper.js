@@ -1,6 +1,8 @@
 import fs from "fs/promises";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
+import OpenAI from "openai";
+const openai = new OpenAI();
 
 async function createSplitter(splittingType, options) {
     try {
@@ -31,12 +33,13 @@ async function splitTextIntoChunks(splittingType = 'recursiveCharacter', options
 
 async function generateEmbeddings(text) {
     try {
-        const embeddings = new OpenAIEmbeddings({
-            apiKey: process.env.OPENAI_API_KEY,
-            modelName: 'text-embedding-3-small' // Later change it to large for the difference in results
-        })
-        const response = await embeddings.embedQuery("Hello world");
-        return response;
+        const embedding = await openai.embeddings.create({
+            model: "text-embedding-3-small",
+            input: text,
+            encoding_format: "float",
+        });
+
+        return embedding;
     } catch (error) {
         throw new Error(`Failed to generate embeddings: ${error.message}`);
     }
