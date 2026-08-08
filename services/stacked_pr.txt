@@ -1,3 +1,3 @@
 Change made in branch 1
 
-Change made in branch 2
+Change made in branch 2. Made another change
